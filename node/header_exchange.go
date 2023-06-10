@@ -133,9 +133,9 @@ func (hExService *HeaderExchangeService) Start() error {
 	}
 
 	peerIDs := hExService.p2p.PeerIDs()
-	if hExService.ex, err = newP2PExchange(hExService.p2p.Host(), peerIDs, network, hExService.genesis.ChainID, hExService.p2p.ConnectionGater()); err != nil {
-		return err
-	}
+	// if hExService.ex, err = newP2PExchange(hExService.p2p.Host(), peerIDs, network, hExService.genesis.ChainID, hExService.p2p.ConnectionGater()); err != nil {
+	// 	return err
+	// }
 	if err = hExService.ex.Start(hExService.ctx); err != nil {
 		return fmt.Errorf("error while starting exchange: %w", err)
 	}
